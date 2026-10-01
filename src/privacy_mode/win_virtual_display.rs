@@ -324,8 +324,8 @@ impl PrivacyModeImpl {
     #[inline]
     fn default_display_modes() -> Vec<MonitorMode> {
         vec![MonitorMode {
-            width: 1920,
-            height: 1080,
+            width: 2560,
+            height: 1440,
             sync: 60,
         }]
     }
@@ -487,11 +487,11 @@ impl PrivacyMode for PrivacyModeImpl {
         let primary_display_name = guard.set_primary_display()?;
         guard.disable_physical_displays()?;
         Self::commit_change_display(CDS_RESET)?;
-        // Explicitly set the resolution(virtual display) to 1920x1080.
+        // Explicitly set the resolution(virtual display) to 2560x1440.
         allow_err!(crate::platform::change_resolution(
             &primary_display_name,
-            1920,
-            1080
+            2560,
+            1440
         ));
         let reg_connectivity_2 = reg_display_settings::read_reg_connectivity()?;
 

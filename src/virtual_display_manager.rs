@@ -599,7 +599,7 @@ pub mod amyuni_idd {
         // Workaround for the issue that we can't set the default the resolution.
         if let Ok(old_connectivity_old) = reg_connectivity_old {
             std::thread::spawn(move || {
-                try_reset_resolution_on_first_plug_in(old_connectivity_old.len(), 1920, 1080);
+                try_reset_resolution_on_first_plug_in(old_connectivity_old.len(), 2560, 1440);
             });
         }
 
